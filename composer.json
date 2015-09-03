@@ -5,6 +5,7 @@
     "homepage": "https://github.com/GetResponse/getresponse-api-php",
     "keywords": ["GetResponse", "api", "email"],
     "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "Pawel Maslak",
