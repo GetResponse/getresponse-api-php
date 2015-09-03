@@ -1,5 +1,5 @@
 {
-    "name": "getresponse/getgesponse",
+    "name": "getresponse/getresponse",
     "description": "GetResponse API v3 client library.",
     "version": "0.0.2",
     "homepage": "https://github.com/GetResponse/getresponse-api-php",
