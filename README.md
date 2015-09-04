@@ -87,7 +87,7 @@ $result = $getresponse->getForms();
 --
 List old web forms
 ```php
-$result = $gr->getWebForms();
+$result = $getresponse->getWebForms();
 ```
 
 
