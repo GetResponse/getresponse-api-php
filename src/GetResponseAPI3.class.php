@@ -149,7 +149,7 @@ class GetResponse
      */
     public function searchContacts($params = null)
     {
-        return $this->call('search-contacts/' . $this->setParams($params));
+        return $this->call('search-contacts?' . $this->setParams($params));
     }
 
     /**
@@ -356,10 +356,8 @@ class GetResponse
         if ($http_method == 'POST') {
             $options[CURLOPT_POST] = 1;
             $options[CURLOPT_POSTFIELDS] = $params;
-        } else {
-            if ($http_method == 'DELETE') {
-                $options[CURLOPT_CUSTOMREQUEST] = 'DELETE';
-            }
+        } else if ($http_method == 'DELETE') {
+            $options[CURLOPT_CUSTOMREQUEST] = 'DELETE';
         }
 
         $curl = curl_init();
