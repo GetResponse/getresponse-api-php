@@ -15,8 +15,19 @@ class GetResponse
     private $api_key;
     private $api_url = 'https://api.getresponse.com/v3';
     private $timeout = 8;
-    private $enterprise_domain = null;
     public $http_status;
+
+    /**
+     * X-Domain header value if empty header will be not provided
+     * @var string|null
+     */
+    private $enterprise_domain = null;
+
+    /**
+     * X-APP-ID header value if empty header will be not provided
+     * @var string|null
+     */
+    private $app_id = null;
 
     /**
      * Set api key and optionally API endpoint
@@ -351,6 +362,10 @@ class GetResponse
 
         if (!empty($this->enterprise_domain)) {
             $options[CURLOPT_HTTPHEADER][] = 'X-Domain: ' . $this->enterprise_domain;
+        }
+
+        if (!empty($this->app_id)) {
+            $options[CURLOPT_HTTPHEADER][] = 'X-APP-ID: ' . $this->app_id;
         }
 
         if ($http_method == 'POST') {
