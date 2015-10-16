@@ -199,10 +199,11 @@ class GetResponse
     /**
      * get contact activities
      * @param $contact_id
+     * @return mixed
      */
     public function getContactActivities($contact_id)
     {
-        $this->call('contacts/' . $contact_id . '/activities');
+        return $this->call('contacts/' . $contact_id . '/activities');
     }
 
     /**
