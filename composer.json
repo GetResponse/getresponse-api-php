@@ -19,5 +19,8 @@
     "require": {
         "php": ">=5.2.0",
         "ext-curl": "*"
+    },
+    "autoload": {
+        "files": ["src/GetResponseAPI3.class.php"]
     }
 }
