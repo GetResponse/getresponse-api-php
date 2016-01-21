@@ -15,6 +15,7 @@ class GetResponse
     private $api_key;
     private $api_url = 'https://api.getresponse.com/v3';
     private $timeout = 8;
+    private $returnAssociative = false;
     public $http_status;
 
     /**
@@ -379,12 +380,13 @@ class GetResponse
         $curl = curl_init();
         curl_setopt_array($curl, $options);
 
-        $response = json_decode(curl_exec($curl));
+        $response = json_decode(curl_exec($curl), $this->returnAssociative);
 
         $this->http_status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
 
         curl_close($curl);
-        return (object)$response;
+
+        return $response;
     }
 
     /**
