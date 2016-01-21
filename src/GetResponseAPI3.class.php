@@ -366,7 +366,6 @@ class GetResponse
 			$url .= '?'.http_build_query($params);
 		}
 
-		echo "url: ".$url."\n";
 		$options = array(
 			CURLOPT_URL => $url,
 			CURLOPT_ENCODING => 'gzip,deflate',
