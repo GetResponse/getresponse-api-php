@@ -85,11 +85,12 @@ class GetResponse
 	/**
 	 * get single campaign
 	 * @param string $campaign_id retrieved using API
+	 * @param array $params fields
 	 * @return mixed
 	 */
-	public function getCampaign($campaign_id)
+	public function getCampaign($campaign_id, $params = array())
 	{
-		return $this->call('campaigns/' . $campaign_id);
+		return $this->call('campaigns/' . $campaign_id, 'GET', $params);
 	}
 
 	/**
