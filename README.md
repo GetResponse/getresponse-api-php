@@ -7,13 +7,13 @@ GetResponse API v3 wrapper working on PHP 5.2+.
 
 Standard authorization
 ```php
-$getresponse = new GetResponse('your_api_key');
+$getresponse = new GetResponse\GetResponse('your_api_key');
 ```
 --
 
 Enterprise authorization
 ```php
-$getresponse = new GetResponse('your_api_key');
+$getresponse = new GetResponse\GetResponse('your_api_key');
 $getresponse->enterprise_domain = 'somedomain.com';
 
 //api URL is relative to your domain UR:

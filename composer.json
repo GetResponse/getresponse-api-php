@@ -21,6 +21,8 @@
         "ext-curl": "*"
     },
     "autoload": {
-        "files": ["src/GetResponseAPI3.class.php"]
+        "psr-4": {
+            "GetResponse\\": "src/"
+        }
     }
 }
