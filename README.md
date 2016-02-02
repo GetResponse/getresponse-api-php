@@ -1,6 +1,6 @@
 ## Overview
 
-GetResponse API v3 wrapper working on PHP 5.2+.
+GetResponse API v3 wrapper working on PHP 5.3+.
 [Here](http://apidocs.getresponse.com/en/v3/) you can find our api documentation.
 
 ##Examples
