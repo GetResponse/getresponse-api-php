@@ -1,10 +1,8 @@
 {
     "name": "getresponse/getresponse",
     "description": "GetResponse API v3 client library.",
-    "version": "0.0.2",
     "homepage": "https://github.com/GetResponse/getresponse-api-php",
     "keywords": ["GetResponse", "api", "email"],
-    "type": "library",
     "license": "MIT",
     "authors": [
         {
@@ -17,10 +15,12 @@
         }
     ],
     "require": {
-        "php": ">=5.2.0",
+        "php": ">=5.3.0",
         "ext-curl": "*"
     },
     "autoload": {
-        "files": ["src/GetResponseAPI3.class.php"]
+        "psr-4": {
+            "GetResponse\\": "src/"
+        }
     }
 }

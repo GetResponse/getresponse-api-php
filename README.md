@@ -1,19 +1,19 @@
 ## Overview
 
-GetResponse API v3 wrapper working on PHP 5.2+.
+GetResponse API v3 wrapper working on PHP 5.3+.
 [Here](http://apidocs.getresponse.com/en/v3/) you can find our api documentation.
 
 ##Examples
 
 Standard authorization
 ```php
-$getresponse = new GetResponse('your_api_key');
+$getresponse = new GetResponse\GetResponse('your_api_key');
 ```
 --
 
 Enterprise authorization
 ```php
-$getresponse = new GetResponse('your_api_key');
+$getresponse = new GetResponse\GetResponse('your_api_key');
 $getresponse->enterprise_domain = 'somedomain.com';
 
 //api URL is relative to your domain UR:
