@@ -328,6 +328,16 @@ class GetResponse
     }
 
     /**
+     * retrieve all from-fields
+     *
+     * @return mixed
+     */
+    public function getFromFields($params = array())
+    {
+        return $this->call('from-fields');
+    }
+
+    /**
      * Curl run request
      *
      * @param null $api_method
