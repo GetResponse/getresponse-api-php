@@ -328,6 +328,64 @@ class GetResponse
     }
 
     /**
+     * retrieve all tags
+     * @param array $params
+     *
+     * @return mixed
+     */
+    public function getTags($params = array())
+    {
+        return $this->call('tags?' . $this->setParams($params));
+    }
+
+    /**
+     * retrieve specific tag
+     * 
+     * @param $id
+     * @param array $params
+     * @return mixed
+     */
+    public function getTag($id, $params = array())
+    {
+        return $this->call('tags/' . $id . '?' . $this->setParams($params));
+    }
+
+    /**
+     * add single contact into your campaign
+     *
+     * @param $params
+     * @return mixed
+     */
+    public function addTag($params)
+    {
+        return $this->call('tags', 'POST', $params);
+    }
+
+    /**
+     * updating a tag
+     * @param       $tag_id
+     * @param array $params
+     *
+     * @return mixed
+     */
+    public function updateTag($tag_id, $params = array())
+    {
+        return $this->call('tags/' . $tag_id, 'POST', $params);
+    }
+
+    /**
+     * add single contact into your campaign
+     *
+     * @param $tag_id
+     * @param $params
+     * @return mixed
+     */
+    public function deleteTag($tag_id, $params = array())
+    {
+        return $this->call('tags/' . $tag_id, 'DELETE', $params);
+    }
+
+    /**
      * Curl run request
      *
      * @param null $api_method

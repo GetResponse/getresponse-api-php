@@ -90,6 +90,30 @@ List old web forms
 ```php
 $result = $getresponse->getWebForms();
 ```
+--
+List all tags
+```php
+$result = $getresponse->getTags();
+```
+
+Add a tag
+```php
+$result = $getresponse->addTag([
+    'name' => 'yourtagname'
+]);
+```
+
+Update a tag
+```php
+$result = $getresponse->updateTag($tag_id, [
+    'name' => 'yourtagname'
+]);
+```
+
+Delete a tag
+```php
+$result = $getresponse->deleteTag($tag_id);
+```
 
 
 
