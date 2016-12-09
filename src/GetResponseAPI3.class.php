@@ -367,7 +367,7 @@ class GetResponse
      * @param $params
      * @return mixed
      */
-    public function deleteTag($id, $params)
+    public function deleteTag($id, $params = array())
     {
         return $this->call('tags/' . $id, 'DELETE', $params);
     }
