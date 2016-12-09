@@ -362,6 +362,17 @@ class GetResponse
     }
 
     /**
+     * add single contact into your campaign
+     *
+     * @param $params
+     * @return mixed
+     */
+    public function deleteTag($id, $params)
+    {
+        return $this->call('tags/' . $id, 'DELETE', $params);
+    }
+
+    /**
      * Curl run request
      *
      * @param null $api_method
