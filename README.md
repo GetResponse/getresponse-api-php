@@ -90,7 +90,7 @@ List old web forms
 ```php
 $result = $getresponse->getWebForms();
 ```
-
+--
 List all tags
 ```php
 $result = $getresponse->getTags();
