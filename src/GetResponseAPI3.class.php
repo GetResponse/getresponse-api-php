@@ -362,14 +362,27 @@ class GetResponse
     }
 
     /**
+     * updating a tag
+     * @param       $tag_id
+     * @param array $params
+     *
+     * @return mixed
+     */
+    public function updateTag($tag_id, $params = array())
+    {
+        return $this->call('tags/' . $tag_id, 'POST', $params);
+    }
+
+    /**
      * add single contact into your campaign
      *
+     * @param $tag_id
      * @param $params
      * @return mixed
      */
-    public function deleteTag($id, $params = array())
+    public function deleteTag($tag_id, $params = array())
     {
-        return $this->call('tags/' . $id, 'DELETE', $params);
+        return $this->call('tags/' . $tag_id, 'DELETE', $params);
     }
 
     /**
