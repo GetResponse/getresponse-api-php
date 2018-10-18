@@ -34,10 +34,14 @@ class GetResponse
      * @param      $api_key
      * @param null $api_url
      */
-    public function __construct($api_key, $api_url = null)
+    public function __construct($api_key, $api_url = null, $enterprise_domain = null)
     {
         $this->api_key = $api_key;
 
+        if (!empty($enterprise_domain)) {
+            $this->enterprise_domain = $enterprise_domain;
+        }
+        
         if (!empty($api_url)) {
             $this->api_url = $api_url;
         }
