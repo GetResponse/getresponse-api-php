@@ -1,6 +1,6 @@
 <?php
 
-/**
+/**1
  * GetResponse API v3 client library
  *
  * @author Pawel Maslak <pawel.maslak@getresponse.com>
