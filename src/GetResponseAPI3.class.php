@@ -14,7 +14,7 @@ class GetResponse
 
     private $api_key;
     private $api_url = 'https://api.getresponse.com/v3';
-    private $api_url_enterprise = 'https://api3.getresponse360.com/v3';
+    private $api_url_enterprise = 'https://api3.getresponse360.pl/v3';
     private $timeout = 8;
     public $http_status;
 
