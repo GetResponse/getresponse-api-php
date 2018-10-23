@@ -1,7 +1,7 @@
 {
     "name": "funnyfox777/getresponse-api-php",
     "description": "GetResponse API v3 client library.",
-    "version": "1.0.5"
+    "version": "1.0.5",
     "homepage": "https://github.com/funnyfox777/getresponse-api-php",
     "keywords": ["GetResponse", "api", "email"],
     "type": "library",
