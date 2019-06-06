@@ -6,6 +6,7 @@
     "keywords": ["GetResponse", "api", "email"],
     "type": "library",
     "license": "MIT",
+    "abandoned": "getresponse/sdk-php",
     "authors": [
         {
             "name": "Pawel Maslak",
