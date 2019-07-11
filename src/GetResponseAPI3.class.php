@@ -14,6 +14,7 @@ class GetResponse
 
     private $api_key;
     private $api_url = 'https://api.getresponse.com/v3';
+    private $api_url_enterprise = 'https://api3.getresponse360.pl/v3';
     private $timeout = 8;
     public $http_status;
 
@@ -34,12 +35,16 @@ class GetResponse
      * @param      $api_key
      * @param null $api_url
      */
-    public function __construct($api_key, $api_url = null)
+    public function __construct($api_key, $api_url = null, $enterprise_domain = null)
     {
         $this->api_key = $api_key;
-
+        
         if (!empty($api_url)) {
             $this->api_url = $api_url;
+        }
+        
+        if (!empty($enterprise_domain)) {
+            $this->enterprise_domain = $enterprise_domain;
         }
     }
 
@@ -348,7 +353,7 @@ class GetResponse
         }
 
         $params = json_encode($params);
-        $url = $this->api_url . '/' . $api_method;
+        $url = ($this->enterprise_domain ? $this->api_url_enterprise : $this->api_url) . '/' . $api_method;
 
         $options = array(
             CURLOPT_URL => $url,
@@ -363,6 +368,7 @@ class GetResponse
 
         if (!empty($this->enterprise_domain)) {
             $options[CURLOPT_HTTPHEADER][] = 'X-Domain: ' . $this->enterprise_domain;
+          
         }
 
         if (!empty($this->app_id)) {
