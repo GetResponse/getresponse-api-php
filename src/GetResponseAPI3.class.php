@@ -162,6 +162,17 @@ class GetResponse
     {
         return $this->call('search-contacts?' . $this->setParams($params));
     }
+    
+    /**
+     * search for contacts without saving a search contact record
+     *
+     * @param $params
+     * @return mixed
+     */
+    public function contactSearch($params = array())
+    {   //print_r(json_decode(json_encode($this->call('search-contacts/contacts', 'POST', $params)), true));
+        return $this->call('search-contacts/contacts', 'POST', $params);
+    }
 
     /**
      * retrieve segment
