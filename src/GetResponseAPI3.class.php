@@ -80,6 +80,24 @@ class GetResponse
         return $this->call('campaigns');
     }
 
+    public function getTags()
+    {
+        return $this->call('tags');
+    }
+
+    public function getTagsByName($tagName)
+    { 
+        $tagId = "";
+        $tags   = (array)$this->getTags();
+        $arrayTags = json_decode(json_encode($tags), True);
+        foreach ($arrayTags as $tag) {
+            if ($tag["name"] == $tagName) {
+                $tagId = $tag["tagId"];
+            }
+        }
+        return $tagId;
+    }
+
     /**
      * get single campaign
      * @param string $campaign_id retrieved using API
