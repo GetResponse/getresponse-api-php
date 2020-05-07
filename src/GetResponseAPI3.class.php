@@ -336,7 +336,7 @@ class GetResponse
      * @return mixed
      * @throws Exception
      */
-    private function call($api_method = null, $http_method = 'GET', $params = array())
+    private function call($api_method = null, $http_method = 'GET', $params = array(), $access_token = true)
     {
         if (empty($api_method)) {
             return (object)array(
@@ -349,7 +349,18 @@ class GetResponse
 
         $params = json_encode($params);
         $url = $this->api_url . '/' . $api_method;
-
+        if ($access_token === true) {
+        $options = array(
+            CURLOPT_URL => $url,
+            CURLOPT_ENCODING => 'gzip,deflate',
+            CURLOPT_FRESH_CONNECT => 1,
+            CURLOPT_RETURNTRANSFER => 1,
+            CURLOPT_TIMEOUT => $this->timeout,
+            CURLOPT_HEADER => false,
+            CURLOPT_USERAGENT => 'PHP GetResponse client 0.0.2',
+            CURLOPT_HTTPHEADER => array('Authorization: Bearer ' . $this->api_key, 'Content-Type: application/json')
+          );
+        } else {
         $options = array(
             CURLOPT_URL => $url,
             CURLOPT_ENCODING => 'gzip,deflate',
@@ -360,6 +371,7 @@ class GetResponse
             CURLOPT_USERAGENT => 'PHP GetResponse client 0.0.2',
             CURLOPT_HTTPHEADER => array('X-Auth-Token: api-key ' . $this->api_key, 'Content-Type: application/json')
         );
+      }
 
         if (!empty($this->enterprise_domain)) {
             $options[CURLOPT_HTTPHEADER][] = 'X-Domain: ' . $this->enterprise_domain;
