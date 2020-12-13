@@ -326,6 +326,17 @@ class GetResponse
     {
         return $this->call('forms?' . $this->setParams($params));
     }
+    
+    /**
+     * retrieve all from-fields
+     * @param array $params
+     *
+     * @return mixed
+     */
+    public function getFromFields($params = array())
+    {
+        return $this->call('from-fields?' . $this->setParams($params));
+    }
 
     /**
      * Curl run request
