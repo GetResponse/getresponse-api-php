@@ -73,11 +73,12 @@ class GetResponse
 
     /**
      * Return all campaigns
+     * @param $params
      * @return mixed
      */
-    public function getCampaigns()
+    public function getCampaigns($params = array())
     {
-        return $this->call('campaigns');
+        return $this->call('campaigns?' . $this->setParams($params));
     }
 
     /**
